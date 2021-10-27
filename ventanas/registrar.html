@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+           
+        $("#guardar2").on(function(e){
+            e.preventDefault();
+            var FechaHora=$("#FechaHora").val();
+            var Id=$("#Id").val();
+            var Ocupacion=$("#Ocupacion").val();
+            var Grupo=$("#Grupo").val();
+            var Nombres=$("#Nombres").val();
+            var Apellidos=$("#Apellidos").val();
+            console.log("FechaHora: "+FechaHora+"Id: "+Id+"Ocupacion"+Ocupacion+"Grupo"+Grupo+"Nombres"+Nombres+"Apellidos"+Apellidos)            
+        })
+        
+        fetch("http://127.0.0.1:8080/Ingreso",{
+            mwthod:"POST",
+            mode:"cars",
+            cache:"no-cache",
+            headers:{"Content Type":"application/json"},
+            body:JSON.stringify({FechaHora,Id,Ocupacion,Grupo,Nombres,apellidos,})
+        })
+        })
+    </script>
+    <script>
+        $(function(){
+           
+        $("#guardar").on(function(e){
+            e.preventDefault();
+            var Id=$("#Id").val();
+            var Ocupacion=$("#Ocupacion").val();
+            var Grupo=$("#Grupo").val();
+            var Nombres=$("#Nombres").val();
+            var Apellidos=$("#Apellidos").val();
+            var Clases_Asistidas=$("#Clases_Asistidas").val();
+            var Clases_Totales=$("#Clases_Totales").val();
+            console.log("Id: "+Id+"Ocupacion"+Ocupacion+"Grupo"+Grupo+"Nombres"+Nombres+"Apellidos"+Apellidos+"Clases_Asistidas"+Clases_Asistidas+"Clases_Totales"+Clases_Totales)            
+        })
+        
+        fetch("http://127.0.0.1:8080/Grupo",{
+            mwthod:"POST",
+            mode:"cars",
+            cache:"no-cache",
+            headers:{"Content Type":"application/json"},
+            body:JSON.stringify({Id,Ocupacion,Grupo,Nombres,apellidos,Clases_Asistidas,Clases_Totales})
+        })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

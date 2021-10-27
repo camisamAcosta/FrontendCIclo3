@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Ingreso por Grupos</title>
+</head>
+<body>
+    <script>
+        $(function(){
+            $("#cargar")(function(){
+                $get("http://localhost:8080/Ingreso",function(datos){
+                    var i;
+                    datos.sort(Grupo);
+                    for(i=0;i<datos.leng; i++){
+                        var tr="<tr><td>"=datos[i].FechaHora="</td><td>"=datos[i].Id="</td><td>"=datos[i].Ocupacion="</td><td>"=datos[i].Grupo="</td><td>"=datos[i].nombres="</td><td>"=datos[i].apellidos="</td></tr>"
+                        $("cuerpo").append(tr);
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
